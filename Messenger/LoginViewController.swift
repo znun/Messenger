@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class LoginViewController: UIViewController {
    //MARK: - IBOutlets
@@ -41,19 +42,35 @@ class LoginViewController: UIViewController {
         
         updateUIFor(login: true)
         setupTextFieldDelegates()
+        setupBackgroundTap()
     }
     
     //MARK: - IBActions
     
 
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
+        if isDataInputedFor(type: isLogin ? "login" : "register") {
+            print("Have data for login/register")
+        } else {
+            ProgressHUD.showFailed("All Fields are required")
+        }
     }
     
     @IBAction func forgotPasswordBtnPressed(_ sender: Any) {
+        if isDataInputedFor(type: "password") {
+            print("Have data for forgot password")
+            
+        } else {
+            ProgressHUD.showFailed("Email is required")
+        }
     }
     
     @IBAction func resendEmailBtnPressed(_ sender: Any) {
+        if isDataInputedFor(type: "password") {
+            print("Have data for resend email")
+        } else {
+            ProgressHUD.showFailed("Email is required")
+        }
     }
     
     @IBAction func signUpBtnPressed(_ sender: UIButton) {
@@ -73,6 +90,14 @@ class LoginViewController: UIViewController {
         updatePlaceholderLabels(textField)
     }
     
+    private func setupBackgroundTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func backgroundTap() {
+        view.endEditing(false)
+    }
     //MARK: - Animation
     
     private func updateUIFor(login: Bool) {
@@ -99,6 +124,18 @@ class LoginViewController: UIViewController {
         }
         
         
+    }
+    
+    //MARK: - Helpers
+    private func isDataInputedFor(type: String) -> Bool {
+        switch type {
+        case "login":
+            return emailTxtField.text != "" && passwordTxtField.text != ""
+        case "registration":
+            return emailTxtField.text != "" && passwordTxtField.text != "" && repeatPasswordTxtField.text != ""
+        default:
+            return emailTxtField.text != ""
+        }
     }
     
     
