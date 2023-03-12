@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="18.666666666666671" id="Grf-Tu-GaA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCB-ro-98i">
                                         <rect key="frame" x="0.0" y="129" width="361" height="2"/>
@@ -82,7 +82,7 @@
                                             <constraint firstAttribute="height" constant="18.666666666666657" id="iaF-f5-Lab"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-tJ-gti">
                                         <rect key="frame" x="0.0" y="131" width="361" height="2"/>

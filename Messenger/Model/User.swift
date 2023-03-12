@@ -43,3 +43,14 @@ struct User: Codable, Equatable {
         lhs.id == rhs.id
     }
 }
+
+func saveUserLocally(_ user: User) {
+    let encoder = JSONEncoder()
+    
+    do {
+        let data = try encoder.encode(user)
+        UserDefaults.standard.set(data, forKey: kCURRENTUSER)
+    } catch {
+        print("error saving user locally ", error.localizedDescription)
+    }
+}
