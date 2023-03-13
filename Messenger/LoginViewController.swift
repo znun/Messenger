@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPasswordBtnPressed(_ sender: Any) {
         if isDataInputedFor(type: "password") {
-            print("Have data for forgot password")
+            resetPassword()
             
         } else {
             ProgressHUD.showFailed("Email is required")
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func resendEmailBtnPressed(_ sender: Any) {
         if isDataInputedFor(type: "password") {
-            print("Have data for resend email")
+           resendVerificationEmail()
         } else {
             ProgressHUD.showFailed("Email is required")
         }
@@ -143,7 +143,7 @@ class LoginViewController: UIViewController {
             if error == nil {
                 if isEmailVerified {
                     ProgressHUD.showSucceed("Successfully logged in")
-                   // print("user has logged in with email /n user has logged in with email user has logged in with email /n user has logged in with email /n user has logged in with email /n user has logged in with email /n user has logged in with email user has logged in with email /n user has logged in with email  ", User.currentUser?.email)
+                    self.goToApp()
                 } else {
                     ProgressHUD.showFailed("Please verify email")
                     self.resendEmailBtn.isHidden = false
@@ -167,6 +167,31 @@ class LoginViewController: UIViewController {
         } else {
             ProgressHUD.showError("the password don't match")
         }
+    }
+    
+    private func resetPassword() {
+        FirebaseUserListener.shared.resetPasswordFor(email: emailTxtField.text!) { (error) in
+            if error == nil {
+                ProgressHUD.showSuccess("Reset link send to email")
+            } else {
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
+    }
+    
+    private func resendVerificationEmail() {
+        FirebaseUserListener.shared.resendVerificationEmail(email: emailTxtField.text!) { (error) in
+            if error == nil {
+                ProgressHUD.showSuccess("New verification email sent")
+            } else {
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
+    }
+    
+    //MARK: - Navigation
+    private func goToApp() {
+        print("go to app")
     }
     
     
