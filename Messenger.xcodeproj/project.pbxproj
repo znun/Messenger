@@ -69,6 +69,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE57077029C052F90023CC4A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE91D46229BDC158002B88CB /* Constant.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CE91D45F29BDBF4D002B88CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +117,10 @@
 			children = (
 				CEE9C8F229BCA468005F51A0 /* AppDelegate.swift */,
 				CEE9C8F429BCA468005F51A0 /* SceneDelegate.swift */,
-				CE91D46229BDC158002B88CB /* Constant.swift */,
 				CEE9C8F629BCA468005F51A0 /* LoginViewController.swift */,
 				CE91D46629BDC5B1002B88CB /* FirebaseHelpers */,
 				CE91D45F29BDBF4D002B88CB /* Model */,
+				CE57077029C052F90023CC4A /* Helpers */,
 				CEE9C8F829BCA468005F51A0 /* Main.storyboard */,
 				CEE9C8FB29BCA46A005F51A0 /* Assets.xcassets */,
 				CEE9C8FD29BCA46A005F51A0 /* LaunchScreen.storyboard */,
