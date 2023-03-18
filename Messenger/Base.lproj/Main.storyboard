@@ -452,7 +452,7 @@
                                                         <constraint firstAttribute="height" constant="60" id="wjc-6a-xyz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name add an profile picture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWK-sa-XO0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name and add an profile picture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWK-sa-XO0">
                                                     <rect key="frame" x="88" y="11" width="285" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="x2Y-7X-gom"/>
@@ -469,6 +469,9 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                                    <connections>
+                                                        <action selector="editBtnPressed:" destination="Unr-67-MeF" eventType="touchUpInside" id="gVu-Q0-M4y"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
