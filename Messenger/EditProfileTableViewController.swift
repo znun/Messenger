@@ -1,19 +1,18 @@
 //
-//  SettingsTableViewController.swift
+//  EditProfileTableViewController.swift
 //  Messenger
 //
-//  Created by Mahmudul Hasan on 16/3/23.
+//  Created by Mahmudul Hasan on 17/3/23.
 //
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
-    
+class EditProfileTableViewController: UITableViewController {
+
     //MARK: - IBOutlets
-    @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var appVersionLbl: UILabel!
+    @IBOutlet weak var avatarImgView: UIImageView!
+    @IBOutlet weak var usernameTxtField: UITextField!
     
     //MARK: - Vars
     var secSpace = 15
@@ -21,12 +20,13 @@ class SettingsTableViewController: UITableViewController {
     //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView()
-       
+        configuredTextField()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         showUserInfo()
     }
@@ -39,6 +39,7 @@ class SettingsTableViewController: UITableViewController {
         
         return headerView
     }
+    
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
@@ -62,47 +63,43 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.section == 0 && indexPath.row == 0 {
-            performSegue(withIdentifier: "settingsToEditProfileSeg", sender: self)
-        }
-    }
-    
-    
-    //MARK: - IBActions
-    
-    @IBAction func tellFriendBtn(_ sender: Any) {
-        print("Tell a Friend")
-    }
-    
-    @IBAction func tNcBtn(_ sender: Any) {
-        print("Terms and Conditions")
-    }
-    
-    @IBAction func logoutBtn(_ sender: Any) {
-        FirebaseUserListener.shared.logoutCurrentUser { (error) in
-            if error == nil {
-                let loginView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginView")
-                
-                DispatchQueue.main.async {
-                    loginView.modalPresentationStyle = .fullScreen
-                    self.present(loginView, animated: true, completion: nil)
-                }
-            }
-        }
+        //TODO:  show status view
     }
     
     //MARK: - UpdateUI
     private func showUserInfo() {
-        
         if let user = User.currentUser {
-            usernameLbl.text = user.username
+            usernameTxtField.text = user.username
             statusLbl.text = user.status
-            appVersionLbl.text = "App Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")"
+            
             if user.avatarLink != "" {
-                //download and set avatar image
-                
+                //set avatar
             }
         }
-        
+    }
+    
+    //MARK: - Configure
+    private func configuredTextField() {
+        usernameTxtField.delegate = self
+        usernameTxtField.clearButtonMode = .whileEditing
+    }
+
+}
+
+extension EditProfileTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTxtField {
+            
+            if textField.text != "" {
+                if var user = User.currentUser {
+                    user.username = textField.text!
+                    saveUserLocally(user)
+                    FirebaseUserListener.shared.saveUserToFireStore(user)
+                }
+            }
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
