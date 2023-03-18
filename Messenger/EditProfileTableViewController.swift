@@ -107,6 +107,23 @@ class EditProfileTableViewController: UITableViewController {
         
         self.present(gallery, animated: true, completion: nil)
     }
+    
+    //MARK: - UploadImages
+    private func uploadAvatarImage(_ image: UIImage) {
+        
+        let fileDirectory = "Avatars/" + "_\(User.currentId)" + ".jpg"
+        
+        FileStorage.uploadImage(image, directory: fileDirectory) { (avatarLink) in
+            
+            if var user = User.currentUser {
+                user.avatarLink = avatarLink ?? ""
+                saveUserLocally(user)
+                FirebaseUserListener.shared.saveUserToFireStore(user)
+            }
+            
+            //TODO: Save image locally
+        }
+    }
 
 }
 
@@ -136,6 +153,7 @@ extension EditProfileTableViewController: GalleryControllerDelegate {
                 
                 if avatarImage != nil {
                     //TODO: upload image
+                    self.uploadAvatarImage(avatarImage!)
                     self.avatarImgView.image = avatarImage
                     
                 } else {
