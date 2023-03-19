@@ -84,7 +84,9 @@ class EditProfileTableViewController: UITableViewController {
             statusLbl.text = user.status
             
             if user.avatarLink != "" {
-                //set avatar
+                FileStorage.downloadImage(imageUrl: user.avatarLink) { (avatarImage) in
+                    self.avatarImgView.image = avatarImage
+                }
             }
         }
     }
@@ -121,7 +123,9 @@ class EditProfileTableViewController: UITableViewController {
                 FirebaseUserListener.shared.saveUserToFireStore(user)
             }
             
+            
             //TODO: Save image locally
+            FileStorage.saveLocally(fileData: image.jpegData(compressionQuality: 1.00)! as NSData, fileName: User.currentId)
         }
     }
 
