@@ -24,6 +24,8 @@
 		CEE9C8FF29BCA46A005F51A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE9C8FD29BCA46A005F51A0 /* LaunchScreen.storyboard */; };
 		CEE9C90729BCB353005F51A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE9C90629BCB350005F51A0 /* GoogleService-Info.plist */; };
 		CEFAB41E29C6F668007E478A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB41D29C6F668007E478A /* Extensions.swift */; };
+		CEFAB42029C7204E007E478A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB41F29C7204E007E478A /* Status.swift */; };
+		CEFAB42229C72650007E478A /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB42129C72650007E478A /* StatusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		CEE9C90029BCA46A005F51A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE9C90629BCB350005F51A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEFAB41D29C6F668007E478A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CEFAB41F29C7204E007E478A /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		CEFAB42129C72650007E478A /* StatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				CE91D45D29BDBF3D002B88CB /* User.swift */,
+				CEFAB41F29C7204E007E478A /* Status.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				CEE9C8F629BCA468005F51A0 /* LoginViewController.swift */,
 				CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */,
 				CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */,
+				CEFAB42129C72650007E478A /* StatusTableViewController.swift */,
 				CE91D46629BDC5B1002B88CB /* FirebaseHelpers */,
 				CE91D45F29BDBF4D002B88CB /* Model */,
 				CE57077029C052F90023CC4A /* Helpers */,
@@ -270,6 +276,8 @@
 				CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */,
 				CEFAB41E29C6F668007E478A /* Extensions.swift in Sources */,
 				CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */,
+				CEFAB42229C72650007E478A /* StatusTableViewController.swift in Sources */,
+				CEFAB42029C7204E007E478A /* Status.swift in Sources */,
 				CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */,
 				CE91D46829BDF1F7002B88CB /* FirebaseUserListener.swift in Sources */,
 				CEE9C8F529BCA468005F51A0 /* SceneDelegate.swift in Sources */,

@@ -65,7 +65,7 @@ class FileStorage {
             }
         } else {
             //download from FB
-            print("let's get from FB")
+           // print("let's get from FB")
             
             if imageUrl != "" {
                 let documentUrl = URL(string: imageUrl)
