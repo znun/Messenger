@@ -26,6 +26,7 @@ class EditProfileTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         configuredTextField()
+        avatarImgView.layer.cornerRadius = avatarImgView.frame.width / 2
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,7 +86,7 @@ class EditProfileTableViewController: UITableViewController {
             
             if user.avatarLink != "" {
                 FileStorage.downloadImage(imageUrl: user.avatarLink) { (avatarImage) in
-                    self.avatarImgView.image = avatarImage
+                    self.avatarImgView.image = avatarImage?.circleMasked
                 }
             }
         }
@@ -158,7 +159,7 @@ extension EditProfileTableViewController: GalleryControllerDelegate {
                 if avatarImage != nil {
                     //TODO: upload image
                     self.uploadAvatarImage(avatarImage!)
-                    self.avatarImgView.image = avatarImage
+                    self.avatarImgView.image = avatarImage?.circleMasked 
                     
                 } else {
                     ProgressHUD.showError("Couldn't select image!")

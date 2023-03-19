@@ -23,6 +23,7 @@
 		CEE9C8FC29BCA46A005F51A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE9C8FB29BCA46A005F51A0 /* Assets.xcassets */; };
 		CEE9C8FF29BCA46A005F51A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE9C8FD29BCA46A005F51A0 /* LaunchScreen.storyboard */; };
 		CEE9C90729BCB353005F51A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE9C90629BCB350005F51A0 /* GoogleService-Info.plist */; };
+		CEFAB41E29C6F668007E478A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAB41D29C6F668007E478A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CEE9C8FE29BCA46A005F51A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE9C90029BCA46A005F51A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE9C90629BCB350005F51A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEFAB41D29C6F668007E478A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				CE91D46229BDC158002B88CB /* Constant.swift */,
 				CEB3908929C62AE200BF8FF2 /* GlobalFunctions.swift */,
+				CEFAB41D29C6F668007E478A /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				CEE9C8F729BCA468005F51A0 /* LoginViewController.swift in Sources */,
 				CE91D46329BDC158002B88CB /* Constant.swift in Sources */,
 				CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */,
+				CEFAB41E29C6F668007E478A /* Extensions.swift in Sources */,
 				CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */,
 				CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */,
 				CE91D46829BDF1F7002B88CB /* FirebaseUserListener.swift in Sources */,
