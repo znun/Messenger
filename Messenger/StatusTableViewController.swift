@@ -45,6 +45,13 @@ class StatusTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "tableViewBackgroundColor")
+        
+        return headerView
+    }
+    
     //MARK: - Loading Status
     private func loadUserStatus() {
         allStatuses = userDefaults.object(forKey: kSTATUS) as! [String]

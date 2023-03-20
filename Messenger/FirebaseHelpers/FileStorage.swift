@@ -119,3 +119,7 @@ func fileExistsAtPath(path: String) -> Bool {
     return FileManager.default.fileExists(atPath: fileInDocumentsDirectory(fileName: path))
     
 }
+
+
+
+
