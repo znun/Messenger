@@ -39,7 +39,7 @@ class EditProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = UIView()
-        headerView.backgroundColor = .white
+      //  headerView.backgroundColor = .white
         
         return headerView
     }

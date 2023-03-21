@@ -16,6 +16,7 @@
 		CE91D46829BDF1F7002B88CB /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D46729BDF1F7002B88CB /* FirebaseUserListener.swift */; };
 		CE9E465F29C7733800557199 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E465E29C7733800557199 /* UserTableViewCell.swift */; };
 		CE9E466129C7736300557199 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E466029C7736300557199 /* UsersTableViewController.swift */; };
+		CEACE64B29C8A3C900F4DCE1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */; };
 		CEB3908829C5DF0F00BF8FF2 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3908729C5DF0F00BF8FF2 /* FileStorage.swift */; };
 		CEB3908A29C62AE200BF8FF2 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3908929C62AE200BF8FF2 /* GlobalFunctions.swift */; };
 		CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9C8F229BCA468005F51A0 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		CE91D46729BDF1F7002B88CB /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		CE9E465E29C7733800557199 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CE9E466029C7736300557199 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		CEB3908729C5DF0F00BF8FF2 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		CEB3908929C62AE200BF8FF2 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		CEE9C8EF29BCA468005F51A0 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,48 @@
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
+		CEACE64729C8A2ED00F4DCE1 /* LoginViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9C8F629BCA468005F51A0 /* LoginViewController.swift */,
+			);
+			path = LoginViews;
+			sourceTree = "<group>";
+		};
+		CEACE64829C8A30000F4DCE1 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E465E29C7733800557199 /* UserTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		CEACE64929C8A33300F4DCE1 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE9E466029C7736300557199 /* UsersTableViewController.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		CEACE64C29C8A3CD00F4DCE1 /* SecondaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */,
+			);
+			path = SecondaryViews;
+			sourceTree = "<group>";
+		};
+		CEACE64D29C8A42B00F4DCE1 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */,
+				CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */,
+				CEFAB42129C72650007E478A /* StatusTableViewController.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		CEE9C8E629BCA468005F51A0 = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +183,11 @@
 			children = (
 				CEE9C8F229BCA468005F51A0 /* AppDelegate.swift */,
 				CEE9C8F429BCA468005F51A0 /* SceneDelegate.swift */,
-				CEE9C8F629BCA468005F51A0 /* LoginViewController.swift */,
-				CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */,
-				CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */,
-				CEFAB42129C72650007E478A /* StatusTableViewController.swift */,
-				CE9E465E29C7733800557199 /* UserTableViewCell.swift */,
-				CE9E466029C7736300557199 /* UsersTableViewController.swift */,
+				CEACE64929C8A33300F4DCE1 /* MainViews */,
+				CEACE64C29C8A3CD00F4DCE1 /* SecondaryViews */,
+				CEACE64729C8A2ED00F4DCE1 /* LoginViews */,
+				CEACE64829C8A30000F4DCE1 /* CustomCells */,
+				CEACE64D29C8A42B00F4DCE1 /* SettingsView */,
 				CE91D46629BDC5B1002B88CB /* FirebaseHelpers */,
 				CE91D45F29BDBF4D002B88CB /* Model */,
 				CE57077029C052F90023CC4A /* Helpers */,
@@ -280,6 +323,7 @@
 				CE91D45E29BDBF3D002B88CB /* User.swift in Sources */,
 				CE9E465F29C7733800557199 /* UserTableViewCell.swift in Sources */,
 				CEE9C8F729BCA468005F51A0 /* LoginViewController.swift in Sources */,
+				CEACE64B29C8A3C900F4DCE1 /* ProfileTableViewController.swift in Sources */,
 				CE91D46329BDC158002B88CB /* Constant.swift in Sources */,
 				CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */,
 				CEFAB41E29C6F668007E478A /* Extensions.swift in Sources */,

@@ -19,9 +19,21 @@ class UsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl = self.refreshControl
+        
+        tableView.tableFooterView = UIView()
+        
         //createDummyUsers()
         setupSearchController()
         downloadUsers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source
@@ -42,10 +54,29 @@ class UsersTableViewController: UITableViewController {
         
     }
     
-    
+    //MARK: - TableViewDelegates
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 70
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "tableViewBackgroundColor")
+        
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 5
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let user = searchController.isActive ? filteredUsers[indexPath.row] : allUsers[indexPath.row]
+        
+        showUserProfile(user)
     }
 
   //MARK: - DownloadUsers
@@ -80,6 +111,22 @@ class UsersTableViewController: UITableViewController {
         })
         
         tableView.reloadData()
+    }
+    
+    //MARK: - UIScrollViewDelegate
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if self.refreshControl!.isRefreshing {
+            self.downloadUsers()
+            self.refreshControl!.endRefreshing()
+        }
+    }
+    
+    //MARK: - Navigation
+    private func showUserProfile(_ user: User) {
+        let profileView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileView") as! ProfileTableViewController
+        
+        profileView.user = user
+        self.navigationController?.pushViewController(profileView, animated: true)
     }
 
 }
