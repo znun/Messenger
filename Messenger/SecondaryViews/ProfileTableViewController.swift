@@ -53,8 +53,10 @@ class ProfileTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 1 {
-            print("Start Chatting")
-            //TODO: Go to chatroom
+           
+            let chatId = startChat(user1: User.currentUser!, user2: user!)
+            
+            print("Chatroom id is", chatId)
         }
     }
 

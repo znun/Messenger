@@ -21,6 +21,7 @@ func startChat(user1: User, user2: User) -> String {
 func createRecentItems(chatRoomId: String, users: [User]) {
     var memberIdsToCreateRecent = [users.first!.id, users.last!.id]
     
+    
     //does user have recent?
     FirebaseReference(.Recent).whereField(kCHATROOMID, isEqualTo: chatRoomId).getDocuments {(snapshot, error) in
         guard let snapshot = snapshot else {return}
@@ -28,15 +29,18 @@ func createRecentItems(chatRoomId: String, users: [User]) {
         if !snapshot.isEmpty {
             
             memberIdsToCreateRecent = removeMemberWhoHasRecent(snapshot: snapshot, memberIds: memberIdsToCreateRecent)
+            
         }
         
         for userId in memberIdsToCreateRecent {
-            
+          
             let senderUser = userId == User.currentId ? User.currentUser! : getReceiverFrom(users: users)
             
             let receiverUser = userId == User.currentId ? getReceiverFrom(users: users) : User.currentUser!
             
             let recentObject = RecentChat(id: UUID().uuidString, chatRoomId: chatRoomId, senderId: senderUser.id, senderName: senderUser.username, receiverId: receiverUser.id, receiverName: receiverUser.username, date: Date() , memberIds: [senderUser.id, receiverUser.id] , lastMessage: "" , unreadCounter: 0 , avatarLink: receiverUser.avatarLink)
+            
+            FirebaseRecentListener.shared.addRecent(recentObject)
         }
         
     }
