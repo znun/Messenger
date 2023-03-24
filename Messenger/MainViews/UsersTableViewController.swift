@@ -92,7 +92,6 @@ class UsersTableViewController: UITableViewController {
     }
     
     //MARK: - SetupSearchController
-    
     private func setupSearchController() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
