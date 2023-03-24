@@ -812,7 +812,7 @@
         <!--Chats-->
         <scene sceneID="xHe-pq-8Jd">
             <objects>
-                <tableViewController id="mcE-I3-6bl" sceneMemberID="viewController">
+                <tableViewController id="mcE-I3-6bl" customClass="ChatsTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XrD-KE-p7J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -43,7 +43,7 @@ class RecentTableViewCell: UITableViewCell {
         lastMessageLbl.minimumScaleFactor = 0.9
         
         if recent.unreadCounter != 0 {
-            self.unreadCounterLbl.text = "\(recent.unreadCounter))"
+            self.unreadCounterLbl.text = "\(recent.unreadCounter)"
             self.unreadCounterBG.isHidden = false
         } else {
             self.unreadCounterBG.isHidden = true
