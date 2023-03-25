@@ -22,7 +22,13 @@ class ChatsTableViewController: UITableViewController {
         downloadRecentChats()
         setupSearchController()
     }
-
+    
+    //MARK: - IBACtions
+    @IBAction func composeBarButtonPressed(_ sender: Any) {
+        let userView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "usersView") as! UsersTableViewController
+        
+        navigationController?.pushViewController(userView, animated: true)
+    }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -40,6 +46,28 @@ class ChatsTableViewController: UITableViewController {
     }
     
     //MARK: - TableViewDelegates
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //TODO: continue chat and goto chatroom
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+         return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let recent = searchController.isActive ? filteredRecents[indexPath.row] : allRecents[indexPath.row]
+            FirebaseRecentListener.shared.deleteRecent(recent)
+            
+            searchController.isActive ? self.filteredRecents.remove(at: indexPath.row) : allRecents.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }

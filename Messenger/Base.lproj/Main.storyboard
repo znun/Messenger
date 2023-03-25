@@ -232,7 +232,7 @@
         <!--Users-->
         <scene sceneID="CaU-cj-2Nu">
             <objects>
-                <tableViewController id="RJb-7f-ePR" customClass="UsersTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="usersView" id="RJb-7f-ePR" customClass="UsersTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oax-Ur-9Vy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -908,7 +908,13 @@
                             <outlet property="delegate" destination="mcE-I3-6bl" id="jxk-NF-qx9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Chats" id="T5j-kt-q74"/>
+                    <navigationItem key="navigationItem" title="Chats" id="T5j-kt-q74">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="J6G-d6-1Sk">
+                            <connections>
+                                <action selector="composeBarButtonPressed:" destination="mcE-I3-6bl" id="Rnf-4O-d7H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujc-rW-iky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
