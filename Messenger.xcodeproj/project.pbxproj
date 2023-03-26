@@ -11,6 +11,11 @@
 		CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */; };
 		CE6882B329D0189C00897121 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B229D0189C00897121 /* Realm */; };
 		CE6882B529D0189C00897121 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B429D0189C00897121 /* RealmSwift */; };
+		CE6882B729D0518D00897121 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882B629D0518D00897121 /* MessageDataSource.swift */; };
+		CE6882BA29D051C400897121 /* MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882B929D051C400897121 /* MessageCellDelegate.swift */; };
+		CE6882BC29D051EA00897121 /* MessageDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882BB29D051EA00897121 /* MessageDisplayDelegate.swift */; };
+		CE6882BE29D0520200897121 /* MessageLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882BD29D0520200897121 /* MessageLayoutDelegate.swift */; };
+		CE6882C029D0522700897121 /* InputBarAccessoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882BF29D0522700897121 /* InputBarAccessoryViewDelegate.swift */; };
 		CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */; };
 		CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */; };
 		CE91D45E29BDBF3D002B88CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D45D29BDBF3D002B88CB /* User.swift */; };
@@ -44,6 +49,11 @@
 		43658DC4D63099FB9F85336F /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		580924D15B3A730460B00BD7 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CE6882B629D0518D00897121 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
+		CE6882B929D051C400897121 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
+		CE6882BB29D051EA00897121 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
+		CE6882BD29D0520200897121 /* MessageLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLayoutDelegate.swift; sourceTree = "<group>"; };
+		CE6882BF29D0522700897121 /* InputBarAccessoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBarAccessoryViewDelegate.swift; sourceTree = "<group>"; };
 		CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CE91D45D29BDBF3D002B88CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -116,6 +126,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CE6882B829D0519300897121 /* ChatViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE6882B629D0518D00897121 /* MessageDataSource.swift */,
+				CE6882B929D051C400897121 /* MessageCellDelegate.swift */,
+				CE6882BB29D051EA00897121 /* MessageDisplayDelegate.swift */,
+				CE6882BD29D0520200897121 /* MessageLayoutDelegate.swift */,
+				CE6882BF29D0522700897121 /* InputBarAccessoryViewDelegate.swift */,
+			);
+			path = ChatViewExtensions;
+			sourceTree = "<group>";
+		};
 		CE91D45F29BDBF4D002B88CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +190,7 @@
 			children = (
 				CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */,
 				CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */,
+				CE6882B829D0519300897121 /* ChatViewExtensions */,
 			);
 			path = SecondaryViews;
 			sourceTree = "<group>";
@@ -350,6 +373,8 @@
 				CE91D46529BDC469002B88CB /* FCollectionReference.swift in Sources */,
 				CEF209D929CADEC300523AA7 /* FirebaseRecentListener.swift in Sources */,
 				CE9E466129C7736300557199 /* UsersTableViewController.swift in Sources */,
+				CE6882C029D0522700897121 /* InputBarAccessoryViewDelegate.swift in Sources */,
+				CE6882BA29D051C400897121 /* MessageCellDelegate.swift in Sources */,
 				CEB3908829C5DF0F00BF8FF2 /* FileStorage.swift in Sources */,
 				CE91D45E29BDBF3D002B88CB /* User.swift in Sources */,
 				CE9E465F29C7733800557199 /* UserTableViewCell.swift in Sources */,
@@ -363,7 +388,10 @@
 				CEFAB42029C7204E007E478A /* Status.swift in Sources */,
 				CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */,
 				CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */,
+				CE6882BC29D051EA00897121 /* MessageDisplayDelegate.swift in Sources */,
+				CE6882B729D0518D00897121 /* MessageDataSource.swift in Sources */,
 				CEC0564729CD681100171288 /* ChatsTableViewController.swift in Sources */,
+				CE6882BE29D0520200897121 /* MessageLayoutDelegate.swift in Sources */,
 				CEF209D729CAD98600523AA7 /* StartChat.swift in Sources */,
 				CE91D46829BDF1F7002B88CB /* FirebaseUserListener.swift in Sources */,
 				CEE9C8F529BCA468005F51A0 /* SceneDelegate.swift in Sources */,
