@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		23BD8AF868310680D9CD75E7 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580924D15B3A730460B00BD7 /* Pods_Messenger.framework */; };
+		CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */; };
+		CE6882B329D0189C00897121 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B229D0189C00897121 /* Realm */; };
+		CE6882B529D0189C00897121 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B429D0189C00897121 /* RealmSwift */; };
 		CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */; };
 		CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */; };
 		CE91D45E29BDBF3D002B88CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D45D29BDBF3D002B88CB /* User.swift */; };
@@ -40,6 +43,7 @@
 		3085B3B9AEF3163C24573514 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		43658DC4D63099FB9F85336F /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		580924D15B3A730460B00BD7 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CE91D45D29BDBF3D002B88CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6882B529D0189C00897121 /* RealmSwift in Frameworks */,
+				CE6882B329D0189C00897121 /* Realm in Frameworks */,
 				23BD8AF868310680D9CD75E7 /* Pods_Messenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */,
+				CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */,
 			);
 			path = SecondaryViews;
 			sourceTree = "<group>";
@@ -233,6 +240,10 @@
 			dependencies = (
 			);
 			name = Messenger;
+			packageProductDependencies = (
+				CE6882B229D0189C00897121 /* Realm */,
+				CE6882B429D0189C00897121 /* RealmSwift */,
+			);
 			productName = Messenger;
 			productReference = CEE9C8EF29BCA468005F51A0 /* Messenger.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +272,9 @@
 				Base,
 			);
 			mainGroup = CEE9C8E629BCA468005F51A0;
+			packageReferences = (
+				CE6882B129D0189C00897121 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = CEE9C8F029BCA468005F51A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -347,6 +361,7 @@
 				CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */,
 				CEFAB42229C72650007E478A /* StatusTableViewController.swift in Sources */,
 				CEFAB42029C7204E007E478A /* Status.swift in Sources */,
+				CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */,
 				CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */,
 				CEC0564729CD681100171288 /* ChatsTableViewController.swift in Sources */,
 				CEF209D729CAD98600523AA7 /* StartChat.swift in Sources */,
@@ -578,6 +593,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE6882B129D0189C00897121 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE6882B229D0189C00897121 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE6882B129D0189C00897121 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CE6882B429D0189C00897121 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE6882B129D0189C00897121 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEE9C8E729BCA468005F51A0 /* Project object */;
 }

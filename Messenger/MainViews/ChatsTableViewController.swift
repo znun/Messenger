@@ -23,7 +23,7 @@ class ChatsTableViewController: UITableViewController {
         setupSearchController()
     }
     
-    //MARK: - IBACtions
+    //MARK: - IBActions
     @IBAction func composeBarButtonPressed(_ sender: Any) {
         let userView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "usersView") as! UsersTableViewController
         
@@ -47,9 +47,14 @@ class ChatsTableViewController: UITableViewController {
     
     //MARK: - TableViewDelegates
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //TODO: continue chat and goto chatroom
+        let recent = searchController.isActive ? filteredRecents[indexPath.row] : allRecents[indexPath.row]
+        
+        FirebaseRecentListener.shared.clearUnreadCounter(recent: recent)
+        
+        goToChat(recent: recent)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -95,6 +100,12 @@ class ChatsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    //MARK: - Navigation
+    
+    private func goToChat(recent: RecentChat) {
+        
     }
     
     //MARK: - SetupSearchController
