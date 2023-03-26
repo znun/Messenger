@@ -106,6 +106,11 @@ class ChatsTableViewController: UITableViewController {
     
     private func goToChat(recent: RecentChat) {
         
+        restartChat(chatRoomId: recent.chatRoomId, memberId: recent.memberIds)
+        
+        let privateChatView = ChatViewController(chatId: recent.chatRoomId, recipientId: recent.receiverId, recipientName: recent.receiverName)
+        
+        navigationController?.pushViewController(privateChatView, animated: true)
     }
     
     //MARK: - SetupSearchController
