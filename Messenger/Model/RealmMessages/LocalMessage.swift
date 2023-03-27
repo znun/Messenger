@@ -19,6 +19,7 @@ class LocalMessage: Object, Codable {
     @objc dynamic var readDate = Date()
     @objc dynamic var type = ""
     @objc dynamic var status = ""
+    @objc dynamic var message = ""
     @objc dynamic var audioUrl = ""
     @objc dynamic var videoUrl = ""
     @objc dynamic var pictureUrl = ""

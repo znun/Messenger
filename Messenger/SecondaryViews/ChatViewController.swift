@@ -24,6 +24,8 @@ class ChatViewController: MessagesViewController {
     let refreshController = UIRefreshControl()
     let micButton = InputBarButtonItem()
     
+    var mkMessages: [MkMessage] = []
+    
     //MARK: - Inits
     init(chatId: String = "", recipientId: String = "", recipientName: String = "") {
         
