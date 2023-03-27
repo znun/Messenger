@@ -11,6 +11,7 @@
 		CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */; };
 		CE2EF63329D1D390008D48C7 /* MessageKitDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */; };
 		CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63429D1D883008D48C7 /* MkMessage.swift */; };
+		CE2EF63729D1E2FC008D48C7 /* LocalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */; };
 		CE6882B329D0189C00897121 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B229D0189C00897121 /* Realm */; };
 		CE6882B529D0189C00897121 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B429D0189C00897121 /* RealmSwift */; };
 		CE6882B729D0518D00897121 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882B629D0518D00897121 /* MessageDataSource.swift */; };
@@ -53,6 +54,7 @@
 		CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitDefaults.swift; sourceTree = "<group>"; };
 		CE2EF63429D1D883008D48C7 /* MkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MkMessage.swift; sourceTree = "<group>"; };
+		CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMessage.swift; sourceTree = "<group>"; };
 		CE6882B629D0518D00897121 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		CE6882B929D051C400897121 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
 		CE6882BB29D051EA00897121 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE2EF63829D1E30B008D48C7 /* RealmMessages */ = {
+			isa = PBXGroup;
+			children = (
+				CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */,
+			);
+			path = RealmMessages;
+			sourceTree = "<group>";
+		};
 		CE57077029C052F90023CC4A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 				CEFAB41F29C7204E007E478A /* Status.swift */,
 				CEE7766429C9ED410082E3E2 /* RecentChat.swift */,
 				CE2EF63429D1D883008D48C7 /* MkMessage.swift */,
+				CE2EF63829D1E30B008D48C7 /* RealmMessages */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE7766529C9ED410082E3E2 /* RecentChat.swift in Sources */,
+				CE2EF63729D1E2FC008D48C7 /* LocalMessage.swift in Sources */,
 				CEB3908A29C62AE200BF8FF2 /* GlobalFunctions.swift in Sources */,
 				CE91D46529BDC469002B88CB /* FCollectionReference.swift in Sources */,
 				CEF209D929CADEC300523AA7 /* FirebaseRecentListener.swift in Sources */,
