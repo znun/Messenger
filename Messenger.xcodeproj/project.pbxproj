@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		23BD8AF868310680D9CD75E7 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580924D15B3A730460B00BD7 /* Pods_Messenger.framework */; };
 		CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */; };
+		CE2EF63329D1D390008D48C7 /* MessageKitDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */; };
+		CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63429D1D883008D48C7 /* MkMessage.swift */; };
 		CE6882B329D0189C00897121 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B229D0189C00897121 /* Realm */; };
 		CE6882B529D0189C00897121 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B429D0189C00897121 /* RealmSwift */; };
 		CE6882B729D0518D00897121 /* MessageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882B629D0518D00897121 /* MessageDataSource.swift */; };
@@ -49,6 +51,8 @@
 		43658DC4D63099FB9F85336F /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		580924D15B3A730460B00BD7 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitDefaults.swift; sourceTree = "<group>"; };
+		CE2EF63429D1D883008D48C7 /* MkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MkMessage.swift; sourceTree = "<group>"; };
 		CE6882B629D0518D00897121 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		CE6882B929D051C400897121 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
 		CE6882BB29D051EA00897121 /* MessageDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplayDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				CEB3908929C62AE200BF8FF2 /* GlobalFunctions.swift */,
 				CEF209D629CAD98600523AA7 /* StartChat.swift */,
 				CEFAB41D29C6F668007E478A /* Extensions.swift */,
+				CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				CE91D45D29BDBF3D002B88CB /* User.swift */,
 				CEFAB41F29C7204E007E478A /* Status.swift */,
 				CEE7766429C9ED410082E3E2 /* RecentChat.swift */,
+				CE2EF63429D1D883008D48C7 /* MkMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				CEF209D929CADEC300523AA7 /* FirebaseRecentListener.swift in Sources */,
 				CE9E466129C7736300557199 /* UsersTableViewController.swift in Sources */,
 				CE6882C029D0522700897121 /* InputBarAccessoryViewDelegate.swift in Sources */,
+				CE2EF63329D1D390008D48C7 /* MessageKitDefaults.swift in Sources */,
 				CE6882BA29D051C400897121 /* MessageCellDelegate.swift in Sources */,
 				CEB3908829C5DF0F00BF8FF2 /* FileStorage.swift in Sources */,
 				CE91D45E29BDBF3D002B88CB /* User.swift in Sources */,
@@ -386,6 +393,7 @@
 				CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */,
 				CEFAB42229C72650007E478A /* StatusTableViewController.swift in Sources */,
 				CEFAB42029C7204E007E478A /* Status.swift in Sources */,
+				CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */,
 				CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */,
 				CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */,
 				CE6882BC29D051EA00897121 /* MessageDisplayDelegate.swift in Sources */,
