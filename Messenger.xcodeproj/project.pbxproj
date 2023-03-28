@@ -28,6 +28,7 @@
 		CE9E465F29C7733800557199 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E465E29C7733800557199 /* UserTableViewCell.swift */; };
 		CE9E466129C7736300557199 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E466029C7736300557199 /* UsersTableViewController.swift */; };
 		CEACE64B29C8A3C900F4DCE1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */; };
+		CEB076ED29D2BF6700E5EB06 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB076EC29D2BF6700E5EB06 /* RealmManager.swift */; };
 		CEB3908829C5DF0F00BF8FF2 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3908729C5DF0F00BF8FF2 /* FileStorage.swift */; };
 		CEB3908A29C62AE200BF8FF2 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3908929C62AE200BF8FF2 /* GlobalFunctions.swift */; };
 		CEC0564729CD681100171288 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0564629CD681100171288 /* ChatsTableViewController.swift */; };
@@ -69,6 +70,7 @@
 		CE9E465E29C7733800557199 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CE9E466029C7736300557199 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		CEACE64A29C8A3C900F4DCE1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		CEB076EC29D2BF6700E5EB06 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		CEB3908729C5DF0F00BF8FF2 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		CEB3908929C62AE200BF8FF2 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		CEC0564629CD681100171288 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */,
+				CEB076EC29D2BF6700E5EB06 /* RealmManager.swift */,
 			);
 			path = RealmMessages;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				CEE9C8F329BCA468005F51A0 /* AppDelegate.swift in Sources */,
 				CE6882BC29D051EA00897121 /* MessageDisplayDelegate.swift in Sources */,
 				CE6882B729D0518D00897121 /* MessageDataSource.swift in Sources */,
+				CEB076ED29D2BF6700E5EB06 /* RealmManager.swift in Sources */,
 				CEC0564729CD681100171288 /* ChatsTableViewController.swift in Sources */,
 				CE6882BE29D0520200897121 /* MessageLayoutDelegate.swift in Sources */,
 				CEF209D729CAD98600523AA7 /* StartChat.swift in Sources */,
