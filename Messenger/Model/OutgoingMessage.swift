@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 class OutgoingMessage {
     
-    class func send(chatId: String, text: String?, photo: UIImage?, video: String?, audio: String?, audioDuration: Float? = 0.0, location: String, memberIds: [String]) {
+    class func send(chatId: String, text: String?, photo: UIImage?, video: String?, audio: String?, audioDuration: Float? = 0.0, location: String?, memberIds: [String]) {
         
         let currentUser = User.currentUser!
         
@@ -33,10 +33,22 @@ class OutgoingMessage {
         //TODO: Send Push notification
         //TODO: Update recent
     }
+    
+    class func sendMessage(message: LocalMessage, memberIds: [String]) {
+        
+        RealmManager.shared.saveToRealm(message)
+        
+        for memberId in memberIds {
+            
+            print("save message for \(memberIds)")
+        }
+    }
 }
 
 func sendTextMessage(message: LocalMessage, text: String, memberIds: [String]) {
     
     message.message = text
     message.type = kTEXT
+    
+    OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
 }
