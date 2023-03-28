@@ -90,4 +90,10 @@ class ChatViewController: MessagesViewController {
     }
    
 
+    //MARK: - Actions
+    
+    func messageSend(text: String?, photo: UIImage?, video: String?, audio: String?, location: String?, audioDuration: Float = 0.0 ) {
+        
+        print("Sending text ", text)
+    }
 }
