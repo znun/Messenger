@@ -40,7 +40,7 @@ class OutgoingMessage {
         
         for memberId in memberIds {
             
-            print("save message for \(memberIds)")
+            FirebaseMessageListener.shared.addMessage(message, memberId: memberId)
         }
     }
 }
