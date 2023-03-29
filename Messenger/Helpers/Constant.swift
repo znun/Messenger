@@ -26,3 +26,5 @@ public let kPHOTO = "photo"
 public let kVIDEO = "video"
 public let kAUDIO = "audio"
 public let kLOCATION = "location"
+
+public let kDATE = "date"

@@ -25,6 +25,10 @@ class ChatViewController: MessagesViewController {
     let micButton = InputBarButtonItem()
     
     var mkMessages: [MkMessage] = []
+    var allLocalMessages: Results<LocalMessage>!
+    
+    let realm = try! Realm()
+    
     
     //MARK: - Inits
     init(chatId: String = "", recipientId: String = "", recipientName: String = "") {
@@ -46,6 +50,8 @@ class ChatViewController: MessagesViewController {
 
         configureMessageCollectionView()
         configureMessageInputBar()
+        
+        loadChats()
     }
 
     
@@ -66,7 +72,7 @@ class ChatViewController: MessagesViewController {
         messageInputBar.delegate = self
         
         let attachButton = InputBarButtonItem()
-        attachButton.image = UIImage(named: "plus")
+        attachButton.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         
         attachButton.setSize(CGSize(width: 30, height: 30), animated: false)
         
@@ -75,7 +81,7 @@ class ChatViewController: MessagesViewController {
             print("attach button pressed")
         }
         
-        micButton.image = UIImage(systemName: "mic.fill")
+        micButton.image = UIImage(systemName: "mic.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         micButton.setSize(CGSize(width: 30, height: 40), animated: false)
         
         //add gesture recognizer
@@ -89,6 +95,15 @@ class ChatViewController: MessagesViewController {
         messageInputBar.inputTextView.backgroundColor = .systemBackground
     }
    
+    //MARK: - Load Chats
+    private func loadChats() {
+        
+        let predicate = NSPredicate(format: "chatRoomId = %@", chatId)
+        
+        allLocalMessages = realm.objects(LocalMessage.self).filter(predicate).sorted(byKeyPath: kDATE, ascending: true)
+        
+        print("we have \(allLocalMessages.count) messages")
+    }
 
     //MARK: - Actions
     
