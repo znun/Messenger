@@ -109,17 +109,36 @@ class ChatViewController: MessagesViewController {
             
             switch changes {
             case .initial:
-                print("We have \(self.allLocalMessages.count) messages")
+                self.insertMessages()
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToBottom(animated: true)
+                
             case .update(_, _, let insertions, _):
                 for index in insertions {
-                    print("New message \(self.allLocalMessages[index].message) messages")
+                    self.insertMessage(self.allLocalMessages[index])
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToBottom(animated: true)
                 }
+                
             case .error(let error):
                 print("Error on new insertion", error.localizedDescription)
             }
             
         })
         
+    }
+    
+    private func insertMessages() {
+        
+        for message in allLocalMessages {
+            insertMessage(message)
+        }
+    }
+    
+    private func insertMessage(_ localMessage: LocalMessage) {
+       
+        let incoming = IncomingMessage(_collectionView: self)
+        self.mkMessages.append(incoming.createMessage(localMessage: localMessage))
     }
 
     //MARK: - Actions
