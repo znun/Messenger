@@ -14,6 +14,28 @@ import RealmSwift
 
 class ChatViewController: MessagesViewController {
 
+    //MARK: - Views
+    let leftBarButtonView: UIView = {
+        return UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+    }()
+    
+    let tittleLabel: UILabel = {
+        let title = UILabel(frame: CGRect(x: 5, y: 0, width: 180, height: 25))
+        title.textAlignment = .left
+        title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        title.adjustsFontSizeToFitWidth = true
+        return title
+    }()
+    
+    let subTittleLabel: UILabel = {
+        let subTitle = UILabel(frame: CGRect(x: 5, y: 22, width: 180, height: 20))
+        subTitle.textAlignment = .left
+        subTitle.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        subTitle.adjustsFontSizeToFitWidth = true
+        return subTitle
+    }()
+    
+    
     //MARK: - Vars
     private var chatId = ""
     private var recipientId = ""
@@ -50,9 +72,13 @@ class ChatViewController: MessagesViewController {
     //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //self.title = recipientName
         configureMessageCollectionView()
         configureMessageInputBar()
+        
+        configureLeftBarButton()
+        configureCustomTitle()
         
         loadChats()
     }
@@ -96,6 +122,21 @@ class ChatViewController: MessagesViewController {
         messageInputBar.inputTextView.isImagePasteEnabled = false
         messageInputBar.backgroundView.backgroundColor = .systemBackground
         messageInputBar.inputTextView.backgroundColor = .systemBackground
+    }
+    
+    private func configureLeftBarButton() {
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(self.backButtonPressed))]
+    }
+    
+    private func configureCustomTitle() {
+        leftBarButtonView.addSubview(tittleLabel)
+        leftBarButtonView.addSubview(subTittleLabel)
+        
+        let leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonView)
+        
+        self.navigationItem.leftBarButtonItems?.append(leftBarButtonItem)
+        
+        tittleLabel.text = recipientName
     }
    
     //MARK: - Load Chats
@@ -146,5 +187,12 @@ class ChatViewController: MessagesViewController {
     func messageSend(text: String?, photo: UIImage?, video: String?, audio: String?, location: String?, audioDuration: Float = 0.0 ) {
         
         OutgoingMessage.send(chatId: chatId, text: text, photo: photo, video: video, audio: audio, location: location, memberIds: [User.currentId, recipientId])
+    }
+    
+    @objc func backButtonPressed() {
+        
+        //TODO: remove listener
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }
