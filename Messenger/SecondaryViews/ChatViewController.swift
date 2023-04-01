@@ -51,6 +51,9 @@ class ChatViewController: MessagesViewController {
     
     let realm = try! Realm()
     
+    var displayingMessageCount = 0
+    var maxMessageNumber = 0
+    var minMessageNumber = 0
     //Listeners
     var notificationToken: NotificationToken?
     
@@ -196,8 +199,14 @@ class ChatViewController: MessagesViewController {
     //MARK: - Insert Messages
     private func insertMessages() {
         
-        for message in allLocalMessages {
-            insertMessage(message)
+        maxMessageNumber = allLocalMessages.count - displayingMessageCount
+        minMessageNumber = maxMessageNumber - kNUMBEROFMESSAGES
+        
+        if minMessageNumber < 0 {
+            minMessageNumber = 0
+        }
+        for i in minMessageNumber ..< maxMessageNumber {
+            insertMessage(allLocalMessages[i])
         }
     }
     
@@ -205,6 +214,8 @@ class ChatViewController: MessagesViewController {
        
         let incoming = IncomingMessage(_collectionView: self)
         self.mkMessages.append(incoming.createMessage(localMessage: localMessage))
+        
+        displayingMessageCount += 1
     }
 
     //MARK: - Actions

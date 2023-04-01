@@ -11,6 +11,8 @@ let userDefaults = UserDefaults.standard
 
 public let kFILESTORAGE = "gs://messenger-cea5a.appspot.com"
 
+public let kNUMBEROFMESSAGES = 12
+
 public let kCURRENTUSER = "currentuser"
 public let kSTATUS = "status"
 public let kFIRSTRUN = "firstRUN"
