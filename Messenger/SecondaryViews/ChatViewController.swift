@@ -158,6 +158,10 @@ class ChatViewController: MessagesViewController {
         
         allLocalMessages = realm.objects(LocalMessage.self).filter(predicate).sorted(byKeyPath: kDATE, ascending: true)
         
+        if allLocalMessages.isEmpty {
+            checkForOldChats()
+        }
+        
         notificationToken = allLocalMessages.observe({(changes: RealmCollectionChange) in
             
             switch changes {
@@ -176,11 +180,19 @@ class ChatViewController: MessagesViewController {
             case .error(let error):
                 print("Error on new insertion", error.localizedDescription)
             }
-            
         })
+    }
+    
+    private func listenForNewChats() {
         
     }
     
+    private func checkForOldChats() {
+        
+        FirebaseMessageListener.shared.checkForOldChats(User.currentId, collectionId: chatId)
+    }
+    
+    //MARK: - Insert Messages
     private func insertMessages() {
         
         for message in allLocalMessages {
