@@ -76,6 +76,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
         //self.title = recipientName
         configureMessageCollectionView()
         configureMessageInputBar()
@@ -217,6 +218,30 @@ class ChatViewController: MessagesViewController {
         
         displayingMessageCount += 1
     }
+    
+    private func loadMoreMessages(maxNumber: Int, minNumber: Int) {
+        
+        maxMessageNumber = minNumber - 1
+        minMessageNumber = maxMessageNumber - kNUMBEROFMESSAGES
+        
+        if minMessageNumber < 0 {
+            minMessageNumber = 0
+        }
+        
+        for i in (minMessageNumber ... maxMessageNumber) {
+            
+          insertOlderMessage(allLocalMessages[i])
+        }
+    }
+    
+    
+    private func insertOlderMessage(_ localMessage: LocalMessage) {
+       
+        let incoming = IncomingMessage(_collectionView: self)
+        self.mkMessages.insert(incoming.createMessage(localMessage: localMessage), at: 0)
+        
+        displayingMessageCount += 1
+    }
 
     //MARK: - Actions
     
@@ -237,6 +262,21 @@ class ChatViewController: MessagesViewController {
     func updateTypingIndicator(_ show: Bool) {
         
         subTittleLabel.text = show ? "Typing..." : ""
+    }
+    
+    //MARK: - UIScroolViewDelegate
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if refreshController.isRefreshing {
+            
+            if displayingMessageCount < allLocalMessages.count {
+                
+                self.loadMoreMessages(maxNumber: maxMessageNumber, minNumber: minMessageNumber)
+                messagesCollectionView.reloadDataAndKeepOffset()
+            }
+            
+            refreshController.endRefreshing()
+        }
     }
     
     //MARK: - Helpers
