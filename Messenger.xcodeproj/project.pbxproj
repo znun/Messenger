@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23BD8AF868310680D9CD75E7 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580924D15B3A730460B00BD7 /* Pods_Messenger.framework */; };
+		CE06965529D9715300CFDCD4 /* FirebaseTypingListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06965429D9715300CFDCD4 /* FirebaseTypingListener.swift */; };
 		CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */; };
 		CE2EF63329D1D390008D48C7 /* MessageKitDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */; };
 		CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63429D1D883008D48C7 /* MkMessage.swift */; };
@@ -55,6 +56,7 @@
 		3085B3B9AEF3163C24573514 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		43658DC4D63099FB9F85336F /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		580924D15B3A730460B00BD7 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE06965429D9715300CFDCD4 /* FirebaseTypingListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTypingListener.swift; sourceTree = "<group>"; };
 		CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitDefaults.swift; sourceTree = "<group>"; };
 		CE2EF63429D1D883008D48C7 /* MkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MkMessage.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				CE91D46429BDC468002B88CB /* FCollectionReference.swift */,
 				CE91D46729BDF1F7002B88CB /* FirebaseUserListener.swift */,
+				CE06965429D9715300CFDCD4 /* FirebaseTypingListener.swift */,
 				CEF209D829CADEC300523AA7 /* FirebaseRecentListener.swift */,
 				CECCA84F29D4107200A4EBA9 /* FirebaseMessageListener.swift */,
 				CEB3908729C5DF0F00BF8FF2 /* FileStorage.swift */,
@@ -414,6 +417,7 @@
 				CE91D46329BDC158002B88CB /* Constant.swift in Sources */,
 				CEED025A29D2DE18006EF2DF /* OutgoingMessage.swift in Sources */,
 				CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */,
+				CE06965529D9715300CFDCD4 /* FirebaseTypingListener.swift in Sources */,
 				CEFAB41E29C6F668007E478A /* Extensions.swift in Sources */,
 				CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */,
 				CEFAB42229C72650007E478A /* StatusTableViewController.swift in Sources */,

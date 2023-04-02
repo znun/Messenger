@@ -31,7 +31,8 @@ class OutgoingMessage {
         }
         
         //TODO: Send Push notification
-        //TODO: Update recent
+        
+        FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
     }
     
     class func sendMessage(message: LocalMessage, memberIds: [String]) {
