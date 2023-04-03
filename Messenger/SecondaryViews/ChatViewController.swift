@@ -112,7 +112,7 @@ class ChatViewController: MessagesViewController {
         
         attachButton.onTouchUpInside { item in
             
-            print("attach button pressed")
+            self.actionAttachMessage()
         }
         
         micButton.image = UIImage(systemName: "mic.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
@@ -255,6 +255,45 @@ class ChatViewController: MessagesViewController {
         //TODO: remove listener
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func actionAttachMessage() {
+        
+        messageInputBar.inputTextView.resignFirstResponder()
+        
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let takePhotoOrVideo = UIAlertAction(title: "Camera", style: .default) {
+            (alert) in
+            
+            print("Show camera")
+        }
+        
+        let shareMedia = UIAlertAction(title: "Library", style: .default) {
+            (alert) in
+            
+            print("Show library")
+        }
+        
+        let shareLocation = UIAlertAction(title: "Share Location", style: .default) {
+            (alert) in
+            
+            print("Share Location")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        takePhotoOrVideo.setValue(UIImage(systemName: "camera"), forKey: "image")
+        shareMedia.setValue(UIImage(systemName: "photo.fill"), forKey: "image")
+        shareLocation.setValue(UIImage(systemName: "mappin.and.ellipse"), forKey: "image")
+        
+        
+        optionMenu.addAction(takePhotoOrVideo)
+        optionMenu.addAction(shareMedia)
+        optionMenu.addAction(shareLocation)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     //MARK: - Update Typing indicator
