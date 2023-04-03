@@ -13,6 +13,7 @@ import RealmSwift
 
 
 class ChatViewController: MessagesViewController {
+   
 
     //MARK: - Views
     let leftBarButtonView: UIView = {
@@ -54,6 +55,8 @@ class ChatViewController: MessagesViewController {
     var displayingMessageCount = 0
     var maxMessageNumber = 0
     var minMessageNumber = 0
+    
+    var gallery: GalleryController!
     //Listeners
     var notificationToken: NotificationToken?
     
@@ -265,14 +268,13 @@ class ChatViewController: MessagesViewController {
         
         let takePhotoOrVideo = UIAlertAction(title: "Camera", style: .default) {
             (alert) in
-            
-            print("Show camera")
+            self.showImageGallery(camera: true)
         }
         
         let shareMedia = UIAlertAction(title: "Library", style: .default) {
             (alert) in
             
-            print("Show library")
+            self.showImageGallery(camera: false)
         }
         
         let shareLocation = UIAlertAction(title: "Share Location", style: .default) {
@@ -285,7 +287,7 @@ class ChatViewController: MessagesViewController {
         
         takePhotoOrVideo.setValue(UIImage(systemName: "camera"), forKey: "image")
         shareMedia.setValue(UIImage(systemName: "photo.fill"), forKey: "image")
-        shareLocation.setValue(UIImage(systemName: "mappin.and.ellipse"), forKey: "image")
+        shareLocation .setValue(UIImage(systemName: "mappin.and.ellipse"), forKey: "image")
         
         
         optionMenu.addAction(takePhotoOrVideo)
@@ -325,4 +327,45 @@ class ChatViewController: MessagesViewController {
         let lastMessageDate = allLocalMessages.last?.date ?? Date()
         return Calendar.current.date(byAdding: .second, value: 1, to: lastMessageDate) ?? lastMessageDate
     }
+    
+    //MARK: - Gallery
+    private func showImageGallery(camera: Bool) {
+        
+        gallery = GalleryController()
+        gallery.delegate = self
+        
+        Config.tabsToShow = camera ? [.cameraTab] : [.imageTab, .videoTab]
+        Config.Camera.imageLimit = 1
+        Config.initialTab = .imageTab
+        Config.VideoEditor.maximumDuration = 30
+        
+        self.present(gallery, animated: true, completion: nil)
+    }
+    
+}
+
+extension ChatViewController : GalleryControllerDelegate {
+    func galleryController(_ controller: Gallery.GalleryController, didSelectImages images: [Gallery.Image]) {
+        
+        if images.count > 0 {
+            images.first!.resolve { (image) in
+                self.messageSend(text: nil, photo: image, video: nil, audio: nil, location: nil)
+            }
+        }
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: Gallery.GalleryController, didSelectVideo video: Gallery.Video) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: Gallery.GalleryController, requestLightbox images: [Gallery.Image]) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryControllerDidCancel(_ controller: Gallery.GalleryController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
