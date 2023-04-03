@@ -27,11 +27,18 @@ class OutgoingMessage {
         if text != nil {
             
             sendTextMessage(message: message, text: text!, memberIds: memberIds)
-            //send text message
+            
         }
         
-        //TODO: Send Push notification
+        if photo != nil {
+            
+            sendPictureMessage(message: message, photo: photo!, memberIds: memberIds)
+        }
         
+        
+        
+        
+        //TODO: Send Push notification
         FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
     }
     
@@ -53,3 +60,26 @@ func sendTextMessage(message: LocalMessage, text: String, memberIds: [String]) {
     
     OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
 }
+
+func sendPictureMessage(message: LocalMessage, photo: UIImage, memberIds: [String]) {
+    print("Sending picture message")
+    
+    message.message = "Picture Message"
+    message.type = kPHOTO
+    
+    let fileName = Date().stringDate()
+    let fileDirectory = "MediaMessages/Photo/" + "\(message.chatRoomId)/" + "_\(fileName)" + ".jpg"
+    
+    FileStorage.saveLocally(fileData: photo.jpegData(compressionQuality: 0.6)! as NSData, fileName: fileName)
+    
+    FileStorage.uploadImage(photo, directory: fileDirectory) { (imageURL) in
+        
+        if imageURL != nil {
+            
+            message.pictureUrl = imageURL!
+            
+            OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+        }
+    }
+}
+
