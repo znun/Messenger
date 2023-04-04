@@ -248,7 +248,7 @@ class ChatViewController: MessagesViewController {
 
     //MARK: - Actions
     
-    func messageSend(text: String?, photo: UIImage?, video: String?, audio: String?, location: String?, audioDuration: Float = 0.0 ) {
+    func messageSend(text: String?, photo: UIImage?, video: Video?, audio: String?, location: String?, audioDuration: Float = 0.0 ) {
         
         OutgoingMessage.send(chatId: chatId, text: text, photo: photo, video: video, audio: audio, location: location, memberIds: [User.currentId, recipientId])
     }
@@ -356,6 +356,9 @@ extension ChatViewController : GalleryControllerDelegate {
     }
     
     func galleryController(_ controller: Gallery.GalleryController, didSelectVideo video: Gallery.Video) {
+        
+        self.messageSend(text: nil, photo: nil, video: video, audio: nil, location: nil)
+        
         controller.dismiss(animated: true, completion: nil)
     }
     

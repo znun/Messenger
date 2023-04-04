@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 import FirebaseFirestoreSwift
+import Gallery
 
 class OutgoingMessage {
     
-    class func send(chatId: String, text: String?, photo: UIImage?, video: String?, audio: String?, audioDuration: Float? = 0.0, location: String?, memberIds: [String]) {
+    class func send(chatId: String, text: String?, photo: UIImage?, video: Video?, audio: String?, audioDuration: Float? = 0.0, location: String?, memberIds: [String]) {
         
         let currentUser = User.currentUser!
         
@@ -35,7 +36,9 @@ class OutgoingMessage {
             sendPictureMessage(message: message, photo: photo!, memberIds: memberIds)
         }
         
-        
+        if video != nil {
+           sendVideoMessage(message: message, video: video!, membersIds: memberIds)
+        }
         
         
         //TODO: Send Push notification
@@ -62,7 +65,7 @@ func sendTextMessage(message: LocalMessage, text: String, memberIds: [String]) {
 }
 
 func sendPictureMessage(message: LocalMessage, photo: UIImage, memberIds: [String]) {
-    print("Sending picture message")
+    //print("Sending picture message")
     
     message.message = "Picture Message"
     message.type = kPHOTO
@@ -79,6 +82,46 @@ func sendPictureMessage(message: LocalMessage, photo: UIImage, memberIds: [Strin
             message.pictureUrl = imageURL!
             
             OutgoingMessage.sendMessage(message: message, memberIds: memberIds)
+        }
+    }
+}
+
+func sendVideoMessage(message: LocalMessage, video: Video, membersIds: [String] ) {
+    
+    message.message = "Video Message"
+    message.type = kVIDEO
+    
+    let fileName = Date().stringDate()
+    let thumbnailDirectory = "MediaMessages/Photo/" + "\(message.chatRoomId)/" + "_\(fileName)" + ".jpg"
+    let videoDirectory = "MediaMessages/Video/" + "\(message.chatRoomId)/" + "_\(fileName)" + ".mov"
+    
+    let editor = VideoEditor()
+    
+    editor.process(video: video) { (processedVideo, videoUrl) in
+        
+        if let tempPath = videoUrl {
+            
+            let thumbnail = videoThumbnail(video: tempPath)
+          
+            FileStorage.saveLocally(fileData: thumbnail.jpegData(compressionQuality: 0.7)! as NSData, fileName: fileName)
+            
+            FileStorage.uploadImage(thumbnail, directory: thumbnailDirectory) { (imageLink) in
+                
+                if imageLink != nil {
+                    
+                    let videoData = NSData(contentsOfFile: tempPath.path)
+                    
+                    FileStorage.saveLocally(fileData: videoData!, fileName: fileName + ".mov")
+                    
+                    FileStorage.uploadVideo(videoData!, directory: videoDirectory) { (videoLink) in
+                        
+                        message.pictureUrl = imageLink ?? ""
+                        message.videoUrl = videoLink ?? ""
+                        
+                        OutgoingMessage.sendMessage(message: message, memberIds: membersIds)
+                    }
+                }
+            }
         }
     }
 }

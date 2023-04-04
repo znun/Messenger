@@ -96,7 +96,40 @@ class FileStorage {
         print(fileNameFrom(fileUrl: imageUrl))
     }
    
+    //MARK: - Video
     
+    class func uploadVideo(_ video: NSData, directory: String, completion: @escaping(_ videoLink: String?) -> Void) {
+        
+        let storageRef = storage.reference(forURL: kFILESTORAGE).child(directory)
+        
+        var task: StorageUploadTask!
+        
+        task = storageRef.putData(video as! Data, metadata: nil, completion: { (metadata, error) in
+            
+            task.removeAllObservers()
+            ProgressHUD.dismiss()
+            
+            if error != nil {
+                print("error uploading video \(error!.localizedDescription)")
+                return
+            }
+            storageRef.downloadURL { (url, error) in
+                
+                guard let downloadUrl = url else {
+                    completion(nil)
+                    return
+                }
+                completion(downloadUrl.absoluteString)
+            }
+           
+        })
+        
+        task.observe(StorageTaskStatus.progress) { (snapshot) in
+            
+            let progress = snapshot.progress!.completedUnitCount / snapshot.progress!.totalUnitCount
+            ProgressHUD.showProgress(CGFloat(progress))
+        }
+    }
     
     //MARK: - Save Locally
     class func saveLocally(fileData: NSData, fileName: String) {
