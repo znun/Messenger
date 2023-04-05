@@ -14,6 +14,7 @@
 		CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63429D1D883008D48C7 /* MkMessage.swift */; };
 		CE2EF63729D1E2FC008D48C7 /* LocalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */; };
 		CE398CB929DD586600E5A20F /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398CB829DD586600E5A20F /* VideoMessage.swift */; };
+		CE398CBB29DD7B1B00E5A20F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398CBA29DD7B1B00E5A20F /* LocationManager.swift */; };
 		CE65EE3D29DAD01D003212A4 /* PhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65EE3C29DAD01D003212A4 /* PhotoMessage.swift */; };
 		CE6882B329D0189C00897121 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B229D0189C00897121 /* Realm */; };
 		CE6882B529D0189C00897121 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE6882B429D0189C00897121 /* RealmSwift */; };
@@ -64,6 +65,7 @@
 		CE2EF63429D1D883008D48C7 /* MkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MkMessage.swift; sourceTree = "<group>"; };
 		CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMessage.swift; sourceTree = "<group>"; };
 		CE398CB829DD586600E5A20F /* VideoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessage.swift; sourceTree = "<group>"; };
+		CE398CBA29DD7B1B00E5A20F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CE65EE3C29DAD01D003212A4 /* PhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMessage.swift; sourceTree = "<group>"; };
 		CE6882B629D0518D00897121 /* MessageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataSource.swift; sourceTree = "<group>"; };
 		CE6882B929D051C400897121 /* MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				CE2EF63429D1D883008D48C7 /* MkMessage.swift */,
 				CEED025929D2DE18006EF2DF /* OutgoingMessage.swift */,
 				CEAD736229D58E990015DFD7 /* IncomingMessage.swift */,
+				CE398CBA29DD7B1B00E5A20F /* LocationManager.swift */,
 				CE398CB729DD582E00E5A20F /* MediaMessages */,
 				CE2EF63829D1E30B008D48C7 /* RealmMessages */,
 			);
@@ -452,6 +455,7 @@
 				CE91D46829BDF1F7002B88CB /* FirebaseUserListener.swift in Sources */,
 				CEE9C8F529BCA468005F51A0 /* SceneDelegate.swift in Sources */,
 				CEE7766729CA14D40082E3E2 /* RecentTableViewCell.swift in Sources */,
+				CE398CBB29DD7B1B00E5A20F /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,9 +606,10 @@
 				DEVELOPMENT_TEAM = F9GL24RSF8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would like to use your media library";
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would like to use your camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would like to use your photo library";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Messenger would like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Messenger would like to use your camera";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "$(PRODUCT_NAME) would like to use your location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Messenger would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -634,9 +639,10 @@
 				DEVELOPMENT_TEAM = F9GL24RSF8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would like to use your media library";
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would like to use your camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would like to use your photo library";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Messenger would like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Messenger would like to use your camera";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "$(PRODUCT_NAME) would like to use your location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Messenger would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

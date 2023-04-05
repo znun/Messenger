@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         firstRunCheck()
         
+        LocationManager.shared.startUpdating()
+        
         return true
     }
 
