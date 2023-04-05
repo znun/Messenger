@@ -20,6 +20,7 @@ class MkMessage: NSObject, MessageType {
     var senderInitials: String
     
     var photoItem: PhotoMessage?
+    var videoItem: VideoMessage?
     
     var status: String
     var readData: Date
@@ -41,6 +42,12 @@ class MkMessage: NSObject, MessageType {
             let photoItem = PhotoMessage(path: message.pictureUrl)
             self.kind = MessageKind.photo(photoItem)
             self.photoItem = photoItem
+        
+        case kVIDEO:
+            
+            let videoItem = VideoMessage(url: nil)
+            self.kind = MessageKind.video(videoItem)
+            self.videoItem = videoItem
             
         default:
             print("Unknown Message")
