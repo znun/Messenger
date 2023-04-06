@@ -25,6 +25,7 @@
 		CE6882C029D0522700897121 /* InputBarAccessoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6882BF29D0522700897121 /* InputBarAccessoryViewDelegate.swift */; };
 		CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */; };
 		CE773ED429C3567F00629DE3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */; };
+		CE83C58629DE964000AEBF6B /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83C58529DE964000AEBF6B /* LocationMessage.swift */; };
 		CE91D45E29BDBF3D002B88CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D45D29BDBF3D002B88CB /* User.swift */; };
 		CE91D46329BDC158002B88CB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D46229BDC158002B88CB /* Constant.swift */; };
 		CE91D46529BDC469002B88CB /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D46429BDC468002B88CB /* FCollectionReference.swift */; };
@@ -74,6 +75,7 @@
 		CE6882BF29D0522700897121 /* InputBarAccessoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBarAccessoryViewDelegate.swift; sourceTree = "<group>"; };
 		CE6A448A29C4B31B001A7DAF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		CE773ED329C3567F00629DE3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		CE83C58529DE964000AEBF6B /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
 		CE91D45D29BDBF3D002B88CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE91D46229BDC158002B88CB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CE91D46429BDC468002B88CB /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				CE65EE3C29DAD01D003212A4 /* PhotoMessage.swift */,
 				CE398CB829DD586600E5A20F /* VideoMessage.swift */,
+				CE83C58529DE964000AEBF6B /* LocationMessage.swift */,
 			);
 			path = MediaMessages;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				CE398CB929DD586600E5A20F /* VideoMessage.swift in Sources */,
 				CE6A448B29C4B31B001A7DAF /* EditProfileTableViewController.swift in Sources */,
 				CEFAB42229C72650007E478A /* StatusTableViewController.swift in Sources */,
+				CE83C58629DE964000AEBF6B /* LocationMessage.swift in Sources */,
 				CEFAB42029C7204E007E478A /* Status.swift in Sources */,
 				CEAD736329D58E990015DFD7 /* IncomingMessage.swift in Sources */,
 				CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */,
