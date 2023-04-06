@@ -57,9 +57,13 @@ class ChatViewController: MessagesViewController {
     var minMessageNumber = 0
     
     var gallery: GalleryController!
+    
     //Listeners
     var notificationToken: NotificationToken?
     
+    var longPressGesture: UILongPressGestureRecognizer!
+    var audioFileName = ""
+    var audioDuration: Date!
     
     //MARK: - Inits
     init(chatId: String = "", recipientId: String = "", recipientName: String = "") {
@@ -82,9 +86,11 @@ class ChatViewController: MessagesViewController {
         navigationItem.largeTitleDisplayMode = .never
         //self.title = recipientName
         configureMessageCollectionView()
+        configureGestureRecognizer()
         configureMessageInputBar()
         
         configureLeftBarButton()
+  
         configureCustomTitle()
        // updateTypingIndicator(false)
         loadChats()
@@ -104,6 +110,12 @@ class ChatViewController: MessagesViewController {
         
         messagesCollectionView.refreshControl = refreshController
     }
+    
+    private func configureGestureRecognizer() {
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(recordAudio))
+        longPressGesture.minimumPressDuration = 0.5
+        longPressGesture.delaysTouchesBegan = true
+    }
 
     private func configureMessageInputBar() {
         messageInputBar.delegate = self
@@ -121,7 +133,7 @@ class ChatViewController: MessagesViewController {
         micButton.image = UIImage(systemName: "mic.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         micButton.setSize(CGSize(width: 30, height: 40), animated: false)
         
-        //add gesture recognizer
+        micButton.addGestureRecognizer(longPressGesture)
         
         messageInputBar.setStackViewItems([attachButton], forStack: .left, animated: false)
         
@@ -309,7 +321,7 @@ class ChatViewController: MessagesViewController {
         subTittleLabel.text = show ? "Typing..." : ""
     }
     
-    //MARK: - UIScroolViewDelegate
+    //MARK: - UIScrolViewDelegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         if refreshController.isRefreshing {
@@ -344,6 +356,32 @@ class ChatViewController: MessagesViewController {
         Config.VideoEditor.maximumDuration = 30
         
         self.present(gallery, animated: true, completion: nil)
+    }
+    
+    //MARK: - AudioMessages
+    @objc func recordAudio() {
+        
+        switch longPressGesture.state {
+        case .began:
+            audioDuration = Date()
+            audioFileName = Date().stringDate()
+            //start recording
+        case .ended:
+            
+            //stop recording
+            
+            if fileExistsAtPath(path: audioFileName + ".m4a") {
+                
+                //send message
+            } else {
+                print("No audio file")
+            }
+            
+            audioFileName = ""
+            
+        @unknown default:
+            print("Unknown")
+        }
     }
     
 }
