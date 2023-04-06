@@ -10,6 +10,7 @@
 		23BD8AF868310680D9CD75E7 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580924D15B3A730460B00BD7 /* Pods_Messenger.framework */; };
 		CE06965529D9715300CFDCD4 /* FirebaseTypingListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06965429D9715300CFDCD4 /* FirebaseTypingListener.swift */; };
 		CE1198ED29CEC8A200BA3207 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */; };
+		CE1BD43C29DF1AA6008876D8 /* AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BD43B29DF1AA6008876D8 /* AudioMessage.swift */; };
 		CE2EF63329D1D390008D48C7 /* MessageKitDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */; };
 		CE2EF63529D1D883008D48C7 /* MkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63429D1D883008D48C7 /* MkMessage.swift */; };
 		CE2EF63729D1E2FC008D48C7 /* LocalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */; };
@@ -65,6 +66,7 @@
 		580924D15B3A730460B00BD7 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE06965429D9715300CFDCD4 /* FirebaseTypingListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTypingListener.swift; sourceTree = "<group>"; };
 		CE1198EC29CEC8A200BA3207 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CE1BD43B29DF1AA6008876D8 /* AudioMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessage.swift; sourceTree = "<group>"; };
 		CE2EF63229D1D390008D48C7 /* MessageKitDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitDefaults.swift; sourceTree = "<group>"; };
 		CE2EF63429D1D883008D48C7 /* MkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MkMessage.swift; sourceTree = "<group>"; };
 		CE2EF63629D1E2FC008D48C7 /* LocalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMessage.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				CE65EE3C29DAD01D003212A4 /* PhotoMessage.swift */,
 				CE398CB829DD586600E5A20F /* VideoMessage.swift */,
 				CE83C58529DE964000AEBF6B /* LocationMessage.swift */,
+				CE1BD43B29DF1AA6008876D8 /* AudioMessage.swift */,
 			);
 			path = MediaMessages;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				CE6882BE29D0520200897121 /* MessageLayoutDelegate.swift in Sources */,
 				CEF209D729CAD98600523AA7 /* StartChat.swift in Sources */,
 				CE91D46829BDF1F7002B88CB /* FirebaseUserListener.swift in Sources */,
+				CE1BD43C29DF1AA6008876D8 /* AudioMessage.swift in Sources */,
 				CEE9C8F529BCA468005F51A0 /* SceneDelegate.swift in Sources */,
 				CEE7766729CA14D40082E3E2 /* RecentTableViewCell.swift in Sources */,
 				CE398CBB29DD7B1B00E5A20F /* LocationManager.swift in Sources */,

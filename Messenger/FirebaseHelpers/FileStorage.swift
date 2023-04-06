@@ -137,7 +137,6 @@ class FileStorage {
        let videoFileName = fileNameFrom(fileUrl: videoLink) + ".mov"
        
         if fileExistsAtPath(path: videoFileName) {
-            //get it locally
             
             completion(true, videoFileName)
             
@@ -208,6 +207,39 @@ class FileStorage {
             }
         }
     }
+    
+    class func downloadAudio(audioLink: String, completion: @escaping(_ audioFileName: String) -> Void) {
+        
+       let audioFileName = fileNameFrom(fileUrl: audioLink) + ".m4a"
+       
+        if fileExistsAtPath(path: audioFileName) {
+            
+            completion(audioFileName)
+            
+        }  else {
+           
+            let downloadQueue = DispatchQueue(label: "AudioDownloadQueue")
+            
+            downloadQueue.async {
+                
+                let data = NSData(contentsOf: URL(string: audioLink)!)
+                
+                if data != nil {
+                    
+                    //save locally
+                    FileStorage.saveLocally(fileData: data!, fileName: audioFileName)
+                    
+                    DispatchQueue.main.async {
+                        completion(audioFileName)
+                    }
+                } else {
+                    print("No document in database audio")
+                }
+            }
+        }
+      
+    }
+    
     
    
     

@@ -22,6 +22,7 @@ class MkMessage: NSObject, MessageType {
     var photoItem: PhotoMessage?
     var videoItem: VideoMessage?
     var LocationItem: LocationMessage?
+    var audioItem: AudioMessage?
     
     var status: String
     var readData: Date
@@ -56,7 +57,14 @@ class MkMessage: NSObject, MessageType {
             self.kind = MessageKind.location(locationItem)
             self.LocationItem = locationItem
             
+        case kAUDIO:
+            
+            let audioItem = AudioMessage(duration: 2.0)
+            self.kind = MessageKind.audio(audioItem)
+            self.audioItem = audioItem
+            
         default:
+            self.kind = MessageKind.text(message.message)
             print("Unknown Message")
         }
         
