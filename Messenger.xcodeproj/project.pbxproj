@@ -608,7 +608,7 @@
 				INFOPLIST_FILE = Messenger/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Messenger would like to use your media library";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Messenger would like to use your camera";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "$(PRODUCT_NAME) would like to use your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Messenger would like to use your location";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Messenger would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -641,7 +641,7 @@
 				INFOPLIST_FILE = Messenger/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Messenger would like to use your media library";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Messenger would like to use your camera";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "$(PRODUCT_NAME) would like to use your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Messenger would like to use your location";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Messenger would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

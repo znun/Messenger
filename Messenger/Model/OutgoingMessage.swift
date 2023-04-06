@@ -26,13 +26,10 @@ class OutgoingMessage {
         message.status = kSENT
         
         if text != nil {
-            
             sendTextMessage(message: message, text: text!, memberIds: memberIds)
-            
         }
         
         if photo != nil {
-            
             sendPictureMessage(message: message, photo: photo!, memberIds: memberIds)
         }
         
@@ -40,6 +37,9 @@ class OutgoingMessage {
            sendVideoMessage(message: message, video: video!, membersIds: memberIds)
         }
         
+        if location != nil {
+            sendLocationMessage(message: message, membersIds: memberIds)
+        }
         
         //TODO: Send Push notification
         FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
@@ -126,3 +126,13 @@ func sendVideoMessage(message: LocalMessage, video: Video, membersIds: [String] 
     }
 }
 
+func sendLocationMessage(message: LocalMessage, membersIds: [String] ) {
+    
+    let currentLocation = LocationManager.shared.currentLocation
+    message.message = "Location Message"
+    message.type = kLOCATION
+    message.latitude = currentLocation?.latitude ?? 0.0
+    message.longitude = currentLocation?.longitude ?? 0.0
+    
+    OutgoingMessage.sendMessage(message: message, memberIds: membersIds)
+}
