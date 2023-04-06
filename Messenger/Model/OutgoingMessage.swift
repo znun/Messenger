@@ -41,6 +41,10 @@ class OutgoingMessage {
             sendLocationMessage(message: message, membersIds: memberIds)
         }
         
+        if audio != nil {
+            print("send audio ", audio, audioDuration)
+        }
+        
         //TODO: Send Push notification
         FirebaseRecentListener.shared.updateRecents(chatRoomId: chatId, lastMessage: message.message)
     }
