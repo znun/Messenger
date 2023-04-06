@@ -28,6 +28,7 @@
 		CE83C58629DE964000AEBF6B /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83C58529DE964000AEBF6B /* LocationMessage.swift */; };
 		CE83C58829DE9AB200AEBF6B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83C58729DE9AB200AEBF6B /* MapViewController.swift */; };
 		CE83C58A29DEA38600AEBF6B /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83C58929DEA38600AEBF6B /* MapAnnotation.swift */; };
+		CE83C58C29DEC37000AEBF6B /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83C58B29DEC37000AEBF6B /* AudioRecorder.swift */; };
 		CE91D45E29BDBF3D002B88CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D45D29BDBF3D002B88CB /* User.swift */; };
 		CE91D46329BDC158002B88CB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D46229BDC158002B88CB /* Constant.swift */; };
 		CE91D46529BDC469002B88CB /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91D46429BDC468002B88CB /* FCollectionReference.swift */; };
@@ -80,6 +81,7 @@
 		CE83C58529DE964000AEBF6B /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
 		CE83C58729DE9AB200AEBF6B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CE83C58929DEA38600AEBF6B /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		CE83C58B29DEC37000AEBF6B /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		CE91D45D29BDBF3D002B88CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE91D46229BDC158002B88CB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CE91D46429BDC468002B88CB /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				CEAD736229D58E990015DFD7 /* IncomingMessage.swift */,
 				CE398CBA29DD7B1B00E5A20F /* LocationManager.swift */,
 				CE83C58929DEA38600AEBF6B /* MapAnnotation.swift */,
+				CE83C58B29DEC37000AEBF6B /* AudioRecorder.swift */,
 				CE398CB729DD582E00E5A20F /* MediaMessages */,
 				CE2EF63829D1E30B008D48C7 /* RealmMessages */,
 			);
@@ -435,6 +438,7 @@
 				CE6882C029D0522700897121 /* InputBarAccessoryViewDelegate.swift in Sources */,
 				CE2EF63329D1D390008D48C7 /* MessageKitDefaults.swift in Sources */,
 				CE6882BA29D051C400897121 /* MessageCellDelegate.swift in Sources */,
+				CE83C58C29DEC37000AEBF6B /* AudioRecorder.swift in Sources */,
 				CEB3908829C5DF0F00BF8FF2 /* FileStorage.swift in Sources */,
 				CE91D45E29BDBF3D002B88CB /* User.swift in Sources */,
 				CE9E465F29C7733800557199 /* UserTableViewCell.swift in Sources */,
@@ -621,6 +625,7 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Messenger would like to use your media library";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Messenger would like to use your camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Messenger would like to use your location";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Messenger would like to use your Microphone";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Messenger would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -654,6 +659,7 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Messenger would like to use your media library";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Messenger would like to use your camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Messenger would like to use your location";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Messenger would like to use your Microphone";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Messenger would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

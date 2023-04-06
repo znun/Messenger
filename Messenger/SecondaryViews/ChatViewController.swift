@@ -365,7 +365,7 @@ class ChatViewController: MessagesViewController {
         case .began:
             audioDuration = Date()
             audioFileName = Date().stringDate()
-            //start recording
+            AudioRecorder.shared
         case .ended:
             
             //stop recording
